@@ -1,0 +1,17 @@
+//! VERTEX
+//! INCLUDE _common.glsllib
+
+void main_vs_ground() {
+    vec3 pos = a_position + a_normal * (sin(a_uv.y * 10.0 + clip_time) * 6.0 + 8.0);
+  gl_Position = view_proj_mat * vec4(pos, 1.0);
+  v_position = pos;
+}
+
+//! FRAGMENT
+//! INCLUDE _common.glsllib
+
+void main_fs_ground() {
+  vec3 pos = v_position * 0.2;
+  float checker = mod(floor(pos.x) + floor(pos.y) + floor(pos.z), 2.0);
+  gl_FragColor = vec4(vec3(checker, 1.0, exp(-fract(clip_time))), 1.0);
+}

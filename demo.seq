@@ -1,0 +1,76 @@
+[
+    {
+        render_to: {color: "texture_1", depth: "texture_depth"},
+        clear: true,
+        clips: [
+          {
+            start: 0,
+            duration: 64
+          }
+        ]
+    },
+    {
+        render_to: {color: "texture_1", depth: "texture_depth"},
+        depth_test: true,
+        geometry: "ground",
+        program: "ground",
+        clips: [
+            {
+                start: 0,
+                duration: 32,
+                uniforms: {
+                  "cam_pos": [
+                    [0, [5, 200, -5]],
+                    [32, [-5, 50, -7]],
+                    [64, [5, 20, -5]]
+                  ],
+                  "cam_target": [
+                    [0, [0, 10, 0]],
+                    [64, [0, 10, 0]]
+                  ]
+                }
+            },
+            {
+                start: 32,
+                duration: 32,
+                uniforms: {
+                  "cam_pos": [
+                    [0, [5, 200, -5]],
+                    [32, [-5, 50, -7]],
+                    [64, [5, 20, -5]]
+                  ],
+                  "cam_target": [
+                    [0, [0, 10, 0]],
+                    [64, [0, 10, 0]]
+                  ]
+                }
+            }
+        ]
+    },
+    {
+        clear: true,
+        clips: [
+          {
+            start: 0,
+            duration: 64
+          }
+        ]
+    },
+    {
+        texture_inputs: ["texture_1"],
+        geometry: "quad",
+        program: "posteffect",
+        clips: [
+          {
+            start: 0,
+            duration: 64,
+            uniforms: {
+              "glitch": [
+                [0, [0]],
+                [64, [1]]
+              ]
+            }
+          }
+        ]
+    }
+]
