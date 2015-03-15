@@ -3,7 +3,7 @@
 
 void main_vs_ground() {
     vec3 pos = a_position + a_normal * (sin(a_uv.y * 10.0 + clip_time) * 6.0 + 8.0);
-  gl_Position = view_proj_mat * vec4(pos, 1.0);
+  gl_Position = view_proj_mat * vec4(pos + vec3(25.0, 0.0, 0.0) * u_object_id, 1.0);
   v_position = pos;
 }
 

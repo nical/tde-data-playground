@@ -58,7 +58,7 @@
     },
     {
         texture_inputs: ["texture_1"],
-        scene: "scene1",
+        scene: [{ geometry: "quad"}],
         program: "posteffect",
         clips: [
           {

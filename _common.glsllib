@@ -41,6 +41,8 @@ uniform vec4 mask;
 
 uniform float glitch;
 
+uniform float u_object_id;
+
 varying vec3 v_position;
 varying vec3 v_normal;
 varying vec2 v_uv;
