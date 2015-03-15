@@ -12,7 +12,7 @@
     {
         render_to: {color: "texture_1", depth: "texture_depth"},
         depth_test: true,
-        geometry: "ground",
+        scene: "scene1",
         program: "ground",
         clips: [
             {
@@ -58,7 +58,7 @@
     },
     {
         texture_inputs: ["texture_1"],
-        geometry: "quad",
+        scene: "scene1",
         program: "posteffect",
         clips: [
           {
